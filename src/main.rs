@@ -16,12 +16,10 @@ fn main() {
     if let Err(e) = plot_histogram(&degree_distribution, "./output") {
         eprintln!("Failed to generate histogram: {}", e);
     }
-    
     if let Err(e) = plot_log_log(&degree_distribution, "./output") {
         eprintln!("Failed to generate log-log plot: {}", e);
     }
     
     analysis::simulate_resilience(&graph, 100);
-    analysis::identify_supernodes(&graph, 5); 
-    analysis::simulate_targeted_attacks(&graph, 5); 
+    analysis::simulate_targeted_attacks(&graph, 5);
 }
